@@ -1,5 +1,8 @@
 <script setup lang="ts">
-// Computer Engineer Toolkit — app shell
+import { ref } from 'vue'
+import NumberConverter from './components/NumberConverter.vue'
+
+const selectedTool = ref<string | null>(null)
 </script>
 
 <template>
@@ -23,7 +26,17 @@
 
       <!-- Tool navigation -->
       <nav class="flex-1 overflow-y-auto pt-2">
-        <p class="text-slate-700 text-sm text-center mt-8">No tools installed yet</p>
+        <button
+          @click="selectedTool = 'number-converter'"
+          :class="[
+            'w-full text-left px-4 py-2 rounded-md text-sm transition-colors',
+            selectedTool === 'number-converter' 
+              ? 'bg-cyan-500/10 text-cyan-400 border border-cyan-500/30' 
+              : 'text-slate-400 hover:bg-slate-900/50 hover:text-slate-200'
+          ]"
+        >
+          Number Converter
+        </button>
       </nav>
     </aside>
 
@@ -31,8 +44,10 @@
     <main class="flex-1 overflow-y-auto">
       <div class="p-8">
         <div class="max-w-4xl mx-auto">
+          <NumberConverter v-if="selectedTool === 'number-converter'" />
+          
           <!-- Empty state -->
-          <div class="flex flex-col items-center justify-center min-h-[60vh] text-center">
+          <div v-else class="flex flex-col items-center justify-center min-h-[60vh] text-center">
             <div class="text-6xl mb-4 opacity-10">🛠️</div>
             <h2 class="text-xl font-semibold text-slate-400 mb-2">No tool selected</h2>
             <p class="text-slate-700 text-sm">Select a tool from the sidebar or add a new one.</p>
