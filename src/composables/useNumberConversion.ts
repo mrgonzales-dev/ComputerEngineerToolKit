@@ -2,10 +2,10 @@ import { ref, computed } from 'vue'
 import type { BaseType, NumberState, ErrorState } from '../types/number-converter'
 
 const VALIDATORS: Record<BaseType, RegExp> = {
-  decimal: /^-?[0-9]*$/,
-  binary: /^-?[0-1]*$/,
-  octal: /^-?[0-7]*$/,
-  hexadecimal: /^-?[0-9a-fA-F]*$/,
+  decimal: /^-?[0-9]+$/,
+  binary: /^-?[0-1]+$/,
+  octal: /^-?[0-7]+$/,
+  hexadecimal: /^-?[0-9a-fA-F]+$/,
 }
 
 const BASE_RADIX: Record<BaseType, number> = {
