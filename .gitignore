@@ -26,6 +26,10 @@ npm-debug.log*
 # TypeScript build info
 *.tsbuildinfo
 
+# Generated config artifacts (from composite tsconfig)
+vite.config.d.ts
+vite.config.js
+
 # Pi subagents
 .pi/
 .pi-subagents/

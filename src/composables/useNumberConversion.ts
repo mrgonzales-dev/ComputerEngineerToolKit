@@ -1,4 +1,4 @@
-import { ref, computed } from 'vue'
+import { ref } from 'vue'
 import type { BaseType, NumberState, ErrorState } from '../types/number-converter'
 
 const VALIDATORS: Record<BaseType, RegExp> = {
