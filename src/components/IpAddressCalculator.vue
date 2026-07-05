@@ -52,7 +52,7 @@ const fields = (r: IpCalcResult) => [
     </div>
 
     <!-- Input -->
-    <div class="bg-slate-900/50 border border-slate-800 rounded-lg p-4 mb-4">
+    <div class="border border-slate-800 rounded-lg p-5 mb-5">
       <label
         for="ip-input"
         class="block text-xs uppercase tracking-wider text-slate-400 mb-2"
@@ -89,7 +89,7 @@ const fields = (r: IpCalcResult) => [
       </div>
 
       <!-- Binary representation -->
-      <div class="bg-slate-900/50 border border-slate-800 rounded-lg p-4">
+      <div class="border border-slate-800 rounded-lg p-5">
         <h3 class="text-xs uppercase tracking-wider text-slate-400 mb-3">Binary (per octet)</h3>
         <div class="grid grid-cols-4 gap-2">
           <div
@@ -105,11 +105,11 @@ const fields = (r: IpCalcResult) => [
       </div>
 
       <!-- Computed fields grid -->
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
         <div
           v-for="field in fields(result)"
           :key="field.label"
-          class="bg-slate-900/50 border border-slate-800 rounded-lg p-3"
+          class="border border-slate-800 rounded-lg p-5"
         >
           <div class="flex items-center justify-between">
             <div class="flex-1 min-w-0">

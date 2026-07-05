@@ -41,11 +41,11 @@ const handleCopy = async (base: BaseType) => {
         Clear All
       </button>
     </div>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
       <div
         v-for="field in fields"
         :key="field.key"
-        class="bg-slate-900/50 border border-slate-800 rounded-lg p-4"
+        class="border border-slate-800 rounded-lg p-5"
       >
         <label
           :for="field.key"
