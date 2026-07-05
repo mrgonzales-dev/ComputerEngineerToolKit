@@ -33,3 +33,9 @@ vite.config.js
 # Pi subagents
 .pi/
 .pi-subagents/
+
+# Commit practice (agent reference, not part of project)
+commit-practice/
+
+# Planning docs (local only)
+PLAN.md
