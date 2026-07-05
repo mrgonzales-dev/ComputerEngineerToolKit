@@ -6,6 +6,7 @@ import { ref } from 'vue'
 import NumberConverter from './components/NumberConverter.vue'
 import IpAddressCalculator from './components/IpAddressCalculator.vue'
 import MacConverter from './components/MacConverter.vue'
+import LogicSimulator from './components/LogicSimulator.vue'
 
 const selectedTool = ref<string | null>(null)
 
@@ -37,11 +38,24 @@ const sections: ToolSection[] = [
       { id: 'mac-converter', label: 'MAC Address Converter', icon: 'MAC', available: true },
     ],
   },
+  {
+    title: 'Logic Tools',
+    tools: [
+      { id: 'logic-simulator', label: 'Logic Gate Simulator', icon: 'LG', available: true },
+    ],
+  },
 ]
 </script>
 
 <template>
-  <div class="h-screen w-screen flex bg-black text-slate-100 overflow-hidden">
+  <!-- Full-screen Logic Gate Simulator (replaces app shell) -->
+  <LogicSimulator
+    v-if="selectedTool === 'logic-simulator'"
+    @back="selectedTool = null"
+  />
+
+  <!-- Normal toolkit (sidebar + tools) -->
+  <div v-else class="h-screen w-screen flex bg-black text-slate-100 overflow-hidden">
     <!-- Sidebar -->
     <aside class="w-[30%] min-w-[260px] max-w-[400px] border-r border-slate-900 bg-black flex flex-col p-3">
       <!-- Logo / Title -->
